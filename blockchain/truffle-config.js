@@ -15,7 +15,7 @@ module.exports = {
           numberOfAddresses: 1,
         }),
       network_id: 4,
-      gas: 10000000, // Max is 10000000
+      gas: 00001000, // Max is 10000000
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true,
@@ -23,9 +23,9 @@ module.exports = {
     },
     development: {
       host: "127.0.0.1",
-      port: 7545,
+      port: 8545,
       network_id: "*", // Match any network id
-      gas: 10000000, // Use `gas` & `gasPrice` only if creating type 0 transactions
+      gas: 01000000, // Use `gas` & `gasPrice` only if creating type 0 transactions
       gasPrice: 20000000000, // (20 Gwei) All gas values specified in wei
       // maxFeePerGas: 10, // Use only if creating type 2 transactions
       // maxPriorityFeePerGas: 10, // Use only if creating type 2 transactions
