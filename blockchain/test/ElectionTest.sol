@@ -6,7 +6,7 @@
 //      function isJuryInterviewed() public {
 //          electionToTest.interview([uint256(3), uint256(4), uint256(5)], 15, 1647943642);
 //          assert.equal(
-//              electionToTest.didCurrentJuryInterviewed(15), // Since this returns 2 params as an array
+//              electionToTest.didCurrentJuryInterview(15), // Since this returns 2 params as an array
 //              true,
 //              "Vishal already interviewed the students"
 //          );

@@ -1,25 +1,6 @@
 const Election = artifacts.require("Election");
 const Types = artifacts.require("Types");
 
-/**
-* State Code Mappings
-   {
-     "10": "Andhra Pradesh",
-     "11": "Bihar"
-   }
-* State-Constituency Code Mappings
-   {
-     "10":{
-       "1": "Guntur",
-       "2": "Krishna"
-     }
-     "11":{
-       "1": "Patna",
-       "2": "Dehri"
-     },
-   }
-*/
-
 module.exports = function (deployer, network) {
   if (network == "development") {
     deployer.deploy(Types);
