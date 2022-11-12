@@ -10,9 +10,8 @@ pragma solidity >=0.4.25 <0.9.0;
 library Types {
     struct Jury {
         uint256 juryAddress;
-        uint256 marksToFirst;
-        uint256 marksToSecond;
-        uint256 marksToThird;
+        uint256 juryTookInterview;
+        uint256 juryTookDiscussion;
     }
 
     struct Student {

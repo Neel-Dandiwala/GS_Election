@@ -1,29 +1,29 @@
 {
   "contractName": "Types",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Neel Deep Dandiwala\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Types\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Types.sol\":\"Types\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Types.sol\":{\"keccak256\":\"0x7114ddab6955964f699d2caddfc903765111b709c7494ad73d58bffce246ca8b\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://aa989fb3369eb54db33df58317aea725981eed27e29fecae53fdfafe34a6a5e2\",\"dweb:/ipfs/QmWF4L5t3mHmkNMSpYRGvmWcZBFkuVbx7zuvcwrkHbyiqo\"]}},\"version\":1}",
-  "bytecode": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212202bc9e4509da0954c40fa3b3c9f0e31ca63ce4c744c52bb46750aefbc884d3e8d64736f6c63430008110033",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212202bc9e4509da0954c40fa3b3c9f0e31ca63ce4c744c52bb46750aefbc884d3e8d64736f6c63430008110033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Neel Deep Dandiwala\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Types\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Types.sol\":\"Types\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Types.sol\":{\"keccak256\":\"0x04a064b0e0fc45e5f325fe532bf2b6a6d8788540cb435539717d5271ed0e20e9\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://f3094df063ac8fb1cf8a31b6dfd689d1dbbbb0c08442d478ba8bfedccf3fc0f3\",\"dweb:/ipfs/QmVeDuY4b38bypgGHPjMAUjxHEnou7QS7PvVGTM6kg8v6X\"]}},\"version\":1}",
+  "bytecode": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220fef16ce1ec124faada9ac504c18988d1e5fef1e438d6dde1ad3f1952c5527bed64736f6c63430008110033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220fef16ce1ec124faada9ac504c18988d1e5fef1e438d6dde1ad3f1952c5527bed64736f6c63430008110033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
-  "sourceMap": "170:372:1:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;170:372:1;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "170:372:1:-:0;;;;;;;;",
-  "source": "// SPDX-License-Identifier: GPL-3.0\r\npragma experimental ABIEncoderV2;\r\npragma solidity >=0.4.25 <0.9.0;\r\n\r\n/**\r\n    @title Types\r\n    @author Neel Deep Dandiwala\r\n*/\r\n\r\nlibrary Types {\r\n    struct Jury {\r\n        uint256 juryAddress;\r\n        uint256 marksToFirst;\r\n        uint256 marksToSecond;\r\n        uint256 marksToThird;\r\n    }\r\n\r\n    struct Student {\r\n        string studentName;\r\n        uint256 studentId;\r\n    }\r\n\r\n    struct Results {\r\n        string resultName;\r\n        uint256 resultMarks;\r\n        uint256 resultId;\r\n    }\r\n}",
+  "sourceMap": "170:351:1:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;170:351:1;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "170:351:1:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: GPL-3.0\r\npragma experimental ABIEncoderV2;\r\npragma solidity >=0.4.25 <0.9.0;\r\n\r\n/**\r\n    @title Types\r\n    @author Neel Deep Dandiwala\r\n*/\r\n\r\nlibrary Types {\r\n    struct Jury {\r\n        uint256 juryAddress;\r\n        uint256 juryTookInterview;\r\n        uint256 juryTookDiscussion;\r\n    }\r\n\r\n    struct Student {\r\n        string studentName;\r\n        uint256 studentId;\r\n    }\r\n\r\n    struct Results {\r\n        string resultName;\r\n        uint256 resultMarks;\r\n        uint256 resultId;\r\n    }\r\n}",
   "sourcePath": "D:\\Git-project\\GS_Election\\blockchain\\contracts\\Types.sol",
   "ast": {
     "absolutePath": "project:/contracts/Types.sol",
     "exportedSymbols": {
       "Types": [
-        561
+        699
       ]
     },
-    "id": 562,
+    "id": 700,
     "license": "GPL-3.0",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 537,
+        "id": 677,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -32,7 +32,7 @@
         "src": "37:33:1"
       },
       {
-        "id": 538,
+        "id": 678,
         "literals": [
           "solidity",
           ">=",
@@ -52,15 +52,15 @@
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-          "id": 539,
+          "id": 679,
           "nodeType": "StructuredDocumentation",
           "src": "108:58:1",
           "text": "@title Types\n@author Neel Deep Dandiwala"
         },
         "fullyImplemented": true,
-        "id": 561,
+        "id": 699,
         "linearizedBaseContracts": [
-          561
+          699
         ],
         "name": "Types",
         "nameLocation": "178:5:1",
@@ -68,16 +68,16 @@
         "nodes": [
           {
             "canonicalName": "Types.Jury",
-            "id": 548,
+            "id": 686,
             "members": [
               {
                 "constant": false,
-                "id": 541,
+                "id": 681,
                 "mutability": "mutable",
                 "name": "juryAddress",
                 "nameLocation": "222:11:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 548,
+                "scope": 686,
                 "src": "214:19:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -86,7 +86,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 540,
+                  "id": 680,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "214:7:1",
@@ -99,13 +99,13 @@
               },
               {
                 "constant": false,
-                "id": 543,
+                "id": 683,
                 "mutability": "mutable",
-                "name": "marksToFirst",
-                "nameLocation": "252:12:1",
+                "name": "juryTookInterview",
+                "nameLocation": "252:17:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 548,
-                "src": "244:20:1",
+                "scope": 686,
+                "src": "244:25:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -113,7 +113,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 542,
+                  "id": 682,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "244:7:1",
@@ -126,13 +126,13 @@
               },
               {
                 "constant": false,
-                "id": 545,
+                "id": 685,
                 "mutability": "mutable",
-                "name": "marksToSecond",
-                "nameLocation": "283:13:1",
+                "name": "juryTookDiscussion",
+                "nameLocation": "288:18:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 548,
-                "src": "275:21:1",
+                "scope": 686,
+                "src": "280:26:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -140,37 +140,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 544,
+                  "id": 684,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "275:7:1",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  }
-                },
-                "visibility": "internal"
-              },
-              {
-                "constant": false,
-                "id": 547,
-                "mutability": "mutable",
-                "name": "marksToThird",
-                "nameLocation": "315:12:1",
-                "nodeType": "VariableDeclaration",
-                "scope": 548,
-                "src": "307:20:1",
-                "stateVariable": false,
-                "storageLocation": "default",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_uint256",
-                  "typeString": "uint256"
-                },
-                "typeName": {
-                  "id": 546,
-                  "name": "uint256",
-                  "nodeType": "ElementaryTypeName",
-                  "src": "307:7:1",
+                  "src": "280:7:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -182,23 +155,23 @@
             "name": "Jury",
             "nameLocation": "198:4:1",
             "nodeType": "StructDefinition",
-            "scope": 561,
-            "src": "191:144:1",
+            "scope": 699,
+            "src": "191:123:1",
             "visibility": "public"
           },
           {
             "canonicalName": "Types.Student",
-            "id": 553,
+            "id": 691,
             "members": [
               {
                 "constant": false,
-                "id": 550,
+                "id": 688,
                 "mutability": "mutable",
                 "name": "studentName",
-                "nameLocation": "376:11:1",
+                "nameLocation": "355:11:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 553,
-                "src": "369:18:1",
+                "scope": 691,
+                "src": "348:18:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -206,10 +179,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 549,
+                  "id": 687,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "369:6:1",
+                  "src": "348:6:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -219,13 +192,13 @@
               },
               {
                 "constant": false,
-                "id": 552,
+                "id": 690,
                 "mutability": "mutable",
                 "name": "studentId",
-                "nameLocation": "406:9:1",
+                "nameLocation": "385:9:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 553,
-                "src": "398:17:1",
+                "scope": 691,
+                "src": "377:17:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -233,10 +206,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 551,
+                  "id": 689,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "398:7:1",
+                  "src": "377:7:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -246,25 +219,25 @@
               }
             ],
             "name": "Student",
-            "nameLocation": "350:7:1",
+            "nameLocation": "329:7:1",
             "nodeType": "StructDefinition",
-            "scope": 561,
-            "src": "343:80:1",
+            "scope": 699,
+            "src": "322:80:1",
             "visibility": "public"
           },
           {
             "canonicalName": "Types.Results",
-            "id": 560,
+            "id": 698,
             "members": [
               {
                 "constant": false,
-                "id": 555,
+                "id": 693,
                 "mutability": "mutable",
                 "name": "resultName",
-                "nameLocation": "464:10:1",
+                "nameLocation": "443:10:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 560,
-                "src": "457:17:1",
+                "scope": 698,
+                "src": "436:17:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -272,10 +245,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 554,
+                  "id": 692,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "457:6:1",
+                  "src": "436:6:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -285,13 +258,13 @@
               },
               {
                 "constant": false,
-                "id": 557,
+                "id": 695,
                 "mutability": "mutable",
                 "name": "resultMarks",
-                "nameLocation": "493:11:1",
+                "nameLocation": "472:11:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 560,
-                "src": "485:19:1",
+                "scope": 698,
+                "src": "464:19:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -299,10 +272,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 556,
+                  "id": 694,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "485:7:1",
+                  "src": "464:7:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -312,13 +285,13 @@
               },
               {
                 "constant": false,
-                "id": 559,
+                "id": 697,
                 "mutability": "mutable",
                 "name": "resultId",
-                "nameLocation": "523:8:1",
+                "nameLocation": "502:8:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 560,
-                "src": "515:16:1",
+                "scope": 698,
+                "src": "494:16:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -326,10 +299,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 558,
+                  "id": 696,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "515:7:1",
+                  "src": "494:7:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -339,19 +312,19 @@
               }
             ],
             "name": "Results",
-            "nameLocation": "438:7:1",
+            "nameLocation": "417:7:1",
             "nodeType": "StructDefinition",
-            "scope": 561,
-            "src": "431:108:1",
+            "scope": 699,
+            "src": "410:108:1",
             "visibility": "public"
           }
         ],
-        "scope": 562,
-        "src": "170:372:1",
+        "scope": 700,
+        "src": "170:351:1",
         "usedErrors": []
       }
     ],
-    "src": "37:505:1"
+    "src": "37:484:1"
   },
   "compiler": {
     "name": "solc",
@@ -359,7 +332,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-11-11T19:21:52.563Z",
+  "updatedAt": "2022-11-12T19:46:39.549Z",
   "devdoc": {
     "author": "Neel Deep Dandiwala",
     "kind": "dev",

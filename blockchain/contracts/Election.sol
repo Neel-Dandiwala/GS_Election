@@ -31,23 +31,47 @@ contract Election {
         return students;
     }
 
-    function didCurrentJuryInterviewed(uint256 juryAddress) public view returns (bool juryInterviewed_) {
-        juryInterviewed_ = (jury[juryAddress].marksToFirst != 0);
+    function didCurrentJuryInterview(uint256 juryAddress) public view returns (bool juryInterviewed_) {
+        juryInterviewed_ = (jury[juryAddress].juryTookInterview != 0);
+        return juryInterviewed_;
+
+    }
+
+    function didCurrentJuryDiscussion(uint256 juryAddress) public view returns (bool juryDiscussion_) {
+        juryDiscussion_ = (jury[juryAddress].juryTookDiscussion != 0);
+        return juryDiscussion_;
+
     }
 
     function interview (
-        uint256[3] memory marks, uint256 juryAddress, uint256 currentTime_
+        uint256[] memory marks, uint256 juryAddress, uint256 currentTime_
     ) 
         public
         electionIsOpen(currentTime_)
         isEligibleMarks(juryAddress)
     {
-        jury[juryAddress].marksToFirst = marks[0];
-        jury[juryAddress].marksToSecond = marks[1];
-        jury[juryAddress].marksToThird = marks[2];
+        jury[juryAddress].juryTookInterview = 1;
 
         for (uint256 i = 0; i < students.length; i++){
             uint256 resultMarks_ = resultObtainedMarks[students[i].studentId];
+            require(0 <= marks[i] && marks[i] <= 10);
+            resultObtainedMarks[students[i].studentId] = resultMarks_ + marks[i];
+        }
+         
+    }
+
+    function discussion (
+        uint256[] memory marks, uint256 juryAddress, uint256 currentTime_
+    ) 
+        public
+        electionIsOpen(currentTime_)
+        isEligibleMarks(juryAddress)
+    {
+        jury[juryAddress].juryTookDiscussion = 1;
+
+        for (uint256 i = 0; i < students.length; i++){
+            uint256 resultMarks_ = resultObtainedMarks[students[i].studentId];
+            require(0 <= marks[i] && marks[i] <= 10);
             resultObtainedMarks[students[i].studentId] = resultMarks_ + marks[i];
         }
          
@@ -73,6 +97,24 @@ contract Election {
         return resultDetails_;
     }
 
+    function getWinner(uint256 currentTime_) public view returns (Types.Results memory) {
+        require(electionEndTime < currentTime_);
+        Types.Results memory winnerDetails_;
+        uint256 highestMarks_ = 0;
+        for (uint256 i = 0; i < students.length; i++) {
+            if (resultObtainedMarks[students[i].studentId] > highestMarks_) {
+                highestMarks_ = resultObtainedMarks[students[i].studentId];
+                winnerDetails_ = Types.Results({
+                    resultName: students[i].studentName,
+                    resultMarks: resultObtainedMarks[students[i].studentId],
+                    resultId: students[i].studentId
+                });
+            }
+        }
+
+        return winnerDetails_;
+    }
+
     modifier electionIsOpen(uint256 currentTime_) {
         require(currentTime_ >= electionStartTime);
         require(currentTime_ <= electionEndTime);
@@ -82,9 +124,8 @@ contract Election {
     modifier isEligibleMarks(uint256 juryAddress_) {
         Types.Jury memory jury_ = jury[juryAddress_];
         
-        require(jury_.marksToFirst == 0);
-        require(jury_.marksToSecond == 0);
-        require(jury_.marksToThird == 0);
+        require(jury_.juryTookInterview == 0);
+        require(jury_.juryTookDiscussion == 0);
         _;
     }
 
@@ -118,33 +159,28 @@ contract Election {
     function initializeJuryDatabase_() internal {
         jury[uint256(1)] = Types.Jury({
             juryAddress: uint256(11),
-            marksToFirst: uint256(0),
-            marksToSecond: uint256(0),
-            marksToThird: uint256(0)
+            juryTookInterview: uint256(0),
+            juryTookDiscussion: uint256(0)
         });
         jury[uint256(2)] = Types.Jury({
             juryAddress: uint256(12),
-            marksToFirst: uint256(0),
-            marksToSecond: uint256(0),
-            marksToThird: uint256(0)
+            juryTookInterview: uint256(0),
+            juryTookDiscussion: uint256(0)
         });
         jury[uint256(3)] = Types.Jury({
             juryAddress: uint256(13),
-            marksToFirst: uint256(0),
-            marksToSecond: uint256(0),
-            marksToThird: uint256(0)
+            juryTookInterview: uint256(0),
+            juryTookDiscussion: uint256(0)
         });
         jury[uint256(4)] = Types.Jury({
             juryAddress: uint256(14),
-            marksToFirst: uint256(0),
-            marksToSecond: uint256(0),
-            marksToThird: uint256(0)
+            juryTookInterview: uint256(0),
+            juryTookDiscussion: uint256(0)
         });
         jury[uint256(5)] = Types.Jury({
             juryAddress: uint256(15),
-            marksToFirst: uint256(0),
-            marksToSecond: uint256(0),
-            marksToThird: uint256(0)
+            juryTookInterview: uint256(0),
+            juryTookDiscussion: uint256(0)
         });
     }
 }
