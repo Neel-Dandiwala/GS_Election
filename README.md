@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="100%"  src="https://github.com/Neel-Dandiwala/GS_Election/tree/master/sample-images/4.png?raw=true">
+  <img width="100%"  src="https://github.com/Neel-Dandiwala/GS_Election/blob/master/sample-images/4.png?raw=true">
 </p>
 
 
@@ -154,8 +154,8 @@ Everyone can check the results once the election is closed
 ### Quick Start
 
 1.  Create a new workspace on Remix
-
-        <a href="https://remix.ethereum.org/"> Remix IDE </a>
+<br />
+<a href="https://remix.ethereum.org/"> Remix IDE </a>
 
 2.  Upload the files
 
@@ -184,11 +184,11 @@ _Note the parameters for both functions mentioned above may be like \[marks...\]
 
 | User Name     | Aadhar Number | 
 | ------------- | ------------- | 
-| Suresh        |       11      |
-| Ramesh        |       12      |
-| Mahesh        |       13      |
-| Krishna       |       14      |
-| Narendra      |       15      |
+| John          |       11      |
+| Aloe          |       12      |
+| Minyoung      |       13      |
+| Vishal        |       14      |
+| Shuri         |       15      |
 
 
 ### Test Students
@@ -208,7 +208,7 @@ Neel Dandiwala
 
 ## Sample Images
 
-<img src="https://github.com/Neel-Dandiwala/GS_Election/tree/master/sample-images/1.png?raw=true"><br>
-<img src="https://github.com/Neel-Dandiwala/GS_Election/tree/master/sample-images/2.png?raw=true"><br>
-<img src="https://github.com/Neel-Dandiwala/GS_Election/tree/master/sample-images/3.png?raw=true"><br>
-<img src="https://github.com/Neel-Dandiwala/GS_Election/tree/master/sample-images/4.png?raw=true"><br>
+<img src="https://github.com/Neel-Dandiwala/GS_Election/blob/master/sample-images/1.png?raw=true"><br>
+<img src="https://github.com/Neel-Dandiwala/GS_Election/blob/master/sample-images/2.png?raw=true"><br>
+<img src="https://github.com/Neel-Dandiwala/GS_Election/blob/master/sample-images/3.png?raw=true"><br>
+<img src="https://github.com/Neel-Dandiwala/GS_Election/blob/master/sample-images/4.png?raw=true"><br>
