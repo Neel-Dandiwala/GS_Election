@@ -1,93 +1,33 @@
 <p align="center">
-  <img width="100%"  src="https://github.com/GeekyAnts/sample-e-voting-system-ethereum/blob/main/sample-images/4.png?raw=true">
+  <img width="100%"  src="https://github.com/Neel-Dandiwala/GS_Election/tree/master/sample-images/4.png?raw=true">
 </p>
 
-## Important Links
-
-1. [Demo link](https://geekyants.page.link/evoting)<br />
-2. [Contract Address](https://rinkeby.etherscan.io/address/0xeD4Ab31BD523402809CEB0D8D4073E8A736C76bE)<br />
-3. [Contract Creator](https://rinkeby.etherscan.io/address/0xF2C9ef86c3c98Fc8C265469624dA35af2D72Fa06)<br />
-4. [Tx Hash of contract creation](https://rinkeby.etherscan.io/tx/0x5497693608f7b1236546256a8e0c9317ea0f1737844d02883821ca667ff638de)<br />
-
-## E- Voting
-
-Electoral integrity is essential not just for democratic nations but also for state voter’s trust and liability. Political voting methods are crucial in this respect. From a government standpoint, electronic voting technologies can boost voter participation and confidence and rekindle interest in the voting system.
-
-The electronic voting protocols have a single controller that oversees the whole voting process. This technique leads to erroneous selections due to the central authority’s dishonesty (election commission), which is difficult to rectify using existing methods. The decentralized network may be used as a modern electronic voting technique to circumvent the central authority.
-
-Electronic voting systems must be legitimate, accurate, safe, and convenient when used for elections. It has great potential to decrease organizational costs and increase voter turnout. It eliminates the need to print ballot papers or open polling stations—voters can vote from wherever there is an Internet connection.adoption may be limited by potential problems associated with electronic voting systems. Blockchain technology came into the ground to overcome these issues and offers decentralized nodes for electronic voting and is used to produce electronic voting systems mainly because of their end-to-end verification advantages.
 
 ## Problem Statement
-
-In democracies around the world, voting is considered a fundamental process for the citizens of a country to have a say in the people who represent them or an issue that impacts them. In days after American independence, voting usually took place via viva voce, or by voice vote. Later on in 1634, Massachusetts became the first state to elect its governor using paper ballots.
-
-For many years, democracies around the world stayed with paper ballots and later moved on to electronic voting machines. Despite system checks, safeguard procedures, and election protocols, these machines are not tamper proof. The critics believe that the proprietary code by which the electronic voting machines operate are secret and can be manipulated. As a result governments around the world have been exploring blockchain as a medium to make the general elections tamper proof and transparent. A system where everyone trusts the data as it is since counterfeit is not possible.
+Write a contract to elect the General Secretary (GS) in an education institute. Any number of students can contest the election. Every registered candidate shall give an interview and participate in a group discussion. Five jury members will bestow marks out of 10 pertaining to the interview and 10 more marks pertaining to the group discussion. The candidate who scores highest marks will be elected as the General Secretary of the institute. If two candidates receive same marks then the main jury will make decision based on their experience to finalise the winner.
 
 ## Solution
 
-In comparison to the conventional voting methods, e-voting has enhanced both the efficiency and the integrity of the process. Because of its flexibility, simplicity of use, and cheap cost compared to general elections, electronic voting is widely utilised in various decisions .
+First structures and manual data types are constructed. Using those structures which are encompassed in a library, we got to initialise two databases which included the list of jury members and the student candidates. Then we implemented functions that helped the jury members give out marks to the students by conducting interviews and group discussion sessions with them. Each jury member is recognised by their address. In the end, two functions were implemented to retrieve the results and the winner when the election ended. The election master’s identity was verified at each step by employing the address of the one who triggers the smart contract.
 
-Despite this, existing electronic voting methods run the danger of over-authority and manipulated details, limiting fundamental fairness, privacy, secrecy, anonymity, and transparency in the voting process. Since the e-voting procedures are centralised, licensed by the critical authority, controlled, measured, and monitored in an electronic voting system, is a problem itself for a transparent voting process. Recent controversies in modern democracies such as USA and India amplifies the argument.
-
-It is essential to ensure that assurance in voting does not diminish. In this project we will try to leverage blockchain to fix shortcomings in today’s method in elections and make the polling mechanism clear and accessible, stop illegal voting, strengthen the data protection, and transparent outcome of the polling process. Because of the distributed structure of the blockchain, a smart contract based electronic voting system reduces the risks involved with electronic voting and allows for a tamper-proof for the voting system.
-
-## Implementation of electronic voting:
+## Implementation of electronic election:
 
 ### Required:
 
-- Aadhar card as user unique indentification.
-- Smart Contract consisting of all the rules and protocols required for e-voting.
-- Blockchain Network to deploy the Contract. We have used [Rinkeby](https://www.rinkeby.io/#stats) for our contract.
-- Website for user Interface where voter can vote. We have created webpage with [React](https://reactjs.org/) & [Native Base](https://nativebase.io/).
+- Address of the jury member as unique indentification.
+- Smart Contract consisting of all the rules and protocols required for conducting the election.
+- Blockchain Network to deploy the Contract. I have used Remix IDE's Test Network for the contract.
 
-### Assumptions:
+### Who can give marks:
 
-- Digital print of the Voters (Aadhar card) containing all the info with voting eligibility data like age, state, district and constituency codes, Indian Penal Code information etc updated by Govt. of India.
-- Eligible voters have to register themselves in the constituency where they live, upon which Govt. will update all the info to Aadhar card. Individuals are not permitted to participate in the electoral process if they have not registered or do not possess an Aadhar card.
-- Only Election Chief can start/update Voting timelines.
-- One nation one election
-
-### Who can Vote:
-
-- As per the Indian Constitution, all Indian citizens above the age of 18 years who have registered themselves as voters are eligible to vote. These individuals can vote in national, state, district as well as local government body elections.
-- No individual can be detained or prevented from voting, unless they fulfil the criteria for disqualification.
-  Every voter is allowed one vote only. A voter can vote at the constituency where he has registered himself.
-- Aadhar card should be valid and linked with constituency code.
+- Every jury member who's address is listed in the Jury Database can allocate marks during the interview and group discussion sessions.
+- Jury's address should be valid and linked with the stored equivalent in the database.
 
 ### Who cannot vote:
 
-- If an individual votes in more than one constituency, his vote is disqualified.
 - Already casted vote.
-- Voter’s constituency code not matched with ongoing Election constituencies.
+- Entity's address not matched with ongoing Election's Jury Database.
 
-### How can you vote:
-
-- Login via Aadhar no. and otp
-- If your Aadhar’s constituency code matches with ongoing election, it will show you the Election Vote dashboard else you are not allowed to vote.
-  If the election process is still going on, it will give the option to vote.
-  > Click Vote -> Select Candidate -> Done
-- Vote Casted to selected Candidate
-- Final Candidate List with vote count will be displayed after the election voting process is completed.
-- You are not allowed to vote/update-vote to different candidate again.
-- You are not allowed to vote after Election session ends.
-
-## e-Voting Requirements and Compliance by the Proposed System
-
-- #### Privacy - Keeping an individual’s vote secret
-
-- #### Eligibility - Allowing only registered voters to vote, with each such voter voting only once
-
-- #### Receipt Freeness - Voters should be unable to prove to a third party that they voted in a particular way
-
-- #### Convenience - Voters must be able to vote easily, and everyone who is eligible must be able to vote
-
-- #### Verifiability - The ability to trust the vote tallying process
-
-<br />
-
-# Let's start with E-Voting Smart Contracts
-
-[Do platform Setup! ](SETUP.md)
 
 ## Solidity Functions
 
@@ -95,146 +35,104 @@ It is essential to ensure that assurance in voting does not diminish. In this pr
 
 ```c++
     /**
-     * @notice To check if the voter's age is greater than or equal to 18
-     * @param currentTime_ Current epoch time of the voter
+     * 
+     * @param currentTime_ Current epoch time of the jury
      */
-    modifier votingLinesAreOpen(uint256 currentTime_) {
-        require(currentTime_ >= votingStartTime);
-        require(currentTime_ <= votingEndTime);
-        _;
-    }
-
+        modifier electionIsOpen(uint256 currentTime_) {
+            require(currentTime_ >= electionStartTime);
+            require(currentTime_ <= electionEndTime);
+            _;
+        }
     /**
-     * @notice To check if the voter's age is greater than or equal to 18
-     * @param voterAadhar_ Aadhar number of the current voter
-     * @param nominationNumber_ Aadhar number of the candidate
+    * @param juryAddress_
      */
-    modifier isEligibleVote(uint256 voterAadhar_, uint256 nominationNumber_) {
-        Types.Voter memory voter_ = voter[voterAadhar_];
-        Types.Candidate memory politician_ = candidate[nominationNumber_];
-        require(voter_.age >= 18);
-        require(voter_.isAlive);
-        require(voter_.votedTo != 0);
-        require(
-            (politician_.stateCode == voter_.stateCode &&
-                politician_.constituencyCode == voter_.constituencyCode)
-        );
-        _;
-    }
+        modifier isEligibleMarks(uint256 juryAddress_) {
+            Types.Jury memory jury_ = jury[juryAddress_];
 
-    /**
-     * @notice To check if the user is Election Chief or not
-     */
-    modifier isElectionChief() {
-        require(msg.sender == electionChief);
-        _;
-    }
+            require(jury_.juryTookInterview == 0);
+            require(jury_.juryTookDiscussion == 0);
+            _;
+        }
+
+        modifier isElectionMaster() {
+            require(msg.sender == electionMaster);
+            _;
+        } 
 ```
 
 ### Voting timelines
 
-- Voting will only be opened between a particular date(s) & election chief has the right to update the start & end dates of the voting process.
-- start date can only be updated only if the voting process is not started yet
-- Can extend the voting end date after the voting is started & before the voting is ended
+- Election will only take place between a particular date(s) & election master has the right to update the start & end dates of the process.
 
-```c++
-    /**
-     * @dev used to update the voting start & end times
-     * @param startTime_ Start time that needs to be updated
-     * @param currentTime_ Current time that needs to be updated
-     */
-    function updateVotingStartTime(uint256 startTime_, uint256 currentTime_)
-        public
-        isElectionChief
-    {
-        require(votingStartTime > currentTime_);
-        votingStartTime = startTime_;
-    }
-
-    /**
-     * @dev To extend the end of the voting
-     * @param endTime_ End time that needs to be updated
-     * @param currentTime_ Current time that needs to be updated
-     */
-    function extendVotingTime(uint256 endTime_, uint256 currentTime_)
-        public
-        isElectionChief
-    {
-        require(votingStartTime < currentTime_);
-        require(votingEndTime > currentTime_);
-        votingEndTime = endTime_;
-    }
-```
 
 ### Results
 
-Everyone can check the voting results once the voting lines are closed
+Everyone can check the results once the election is closed
 
 ```c++
     /**
-     * @dev sends all candidate list with their votes count
+     * 
      * @param currentTime_ Current epoch time of length 10.
-     * @return candidateList_ List of Candidate objects with votes count
+     * To get the Results
      */
-    function getResults(uint256 currentTime_)
-        public
-        view
-        returns (Types.Results[] memory)
-    {
-        require(votingEndTime < currentTime_);
-        Types.Results[] memory resultsList_ = new Types.Results[](
-            candidates.length
+    function getResults(uint256 currentTime_) public view returns (Types.Results[] memory) {
+        require(electionEndTime < currentTime_);
+        Types.Results[] memory resultDetails_ = new Types.Results[](
+            students.length
         );
-        // Since the candidates will be lesser in count than voter.
-        // So looping is acceptable.
-        for (uint256 i = 0; i < candidates.length; i++) {
-            resultsList_[i] = Types.Results({
-                name: candidates[i].name,
-                partyShortcut: candidates[i].partyShortcut,
-                partyFlag: candidates[i].partyFlag,
-                nominationNumber: candidates[i].nominationNumber,
-                stateCode: candidates[i].stateCode,
-                constituencyCode: candidates[i].constituencyCode,
-                voteCount: votesCount[candidates[i].nominationNumber]
+        for (uint256 i = 0; i < students.length; i++) {
+            resultDetails_[i] = Types.Results({
+                resultName: students[i].studentName,
+                resultMarks: resultObtainedMarks[students[i].studentId],
+                resultId: students[i].studentId
             });
         }
-        return resultsList_;
+
+        return resultDetails_;
+    }
+
+    /**
+     * 
+     * @param currentTime_ Current epoch time of length 10.
+     * To get the ultimate winner
+     */
+    function getWinner(uint256 currentTime_) public view returns (Types.Results memory) {
+        require(electionEndTime < currentTime_);
+        Types.Results memory winnerDetails_;
+        uint256 highestMarks_ = 0;
+        for (uint256 i = 0; i < students.length; i++) {
+            if (resultObtainedMarks[students[i].studentId] > highestMarks_) {
+                highestMarks_ = resultObtainedMarks[students[i].studentId];
+                winnerDetails_ = Types.Results({
+                    resultName: students[i].studentName,
+                    resultMarks: resultObtainedMarks[students[i].studentId],
+                    resultId: students[i].studentId
+                });
+            }
+        }
+
+        return winnerDetails_;
     }
 ```
 
 ### Custom Types
 
 ```c++
-    struct Voter {
-        uint256 aadharNumber; // voter unique ID
-        string name;
-        uint8 age;
-        uint8 stateCode;
-        uint8 constituencyCode;
-        bool isAlive;
-        uint256 votedTo; // aadhar number of the candidate
+    struct Jury {
+        uint256 juryAddress;
+        uint256 juryTookInterview;
+        uint256 juryTookDiscussion;
     }
 
-    struct Candidate {
-        // Note: If we can limit the length to a certain number of bytes,
-        // we can use one of bytes1 to bytes32 because they are much cheaper
-
-        string name;
-        string partyShortcut;
-        string partyFlag;
-        uint256 nominationNumber; // unique ID of candidate
-        uint8 stateCode;
-        uint8 constituencyCode;
+    struct Student {
+        string studentName;
+        uint256 studentId;
     }
 
     struct Results {
-        string name;
-        string partyShortcut;
-        string partyFlag;
-        uint256 voteCount; // number of accumulated votes
-        uint256 nominationNumber; // unique ID of candidate
-        uint8 stateCode;
-        uint8 constituencyCode;
+        string resultName;
+        uint256 resultMarks;
+        uint256 resultId;
     }
 ```
 
@@ -242,134 +140,75 @@ Everyone can check the voting results once the voting lines are closed
 
 | **Function Name**       | **Input Params**                                                                  | **Return Value**                   | **Description**                                                                                                                            |
 | ----------------------- | --------------------------------------------------------------------------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| isVoterEligible()       | voterAadharNumber                                                                 | Boolean `voterEligible_`           | To check whether voter is eligible to vote or not based on the pre-defined assumptions like the age greater than or equal to 18 & is alive |
-| didCurrentVoterVoted()  | voterAadharNumber                                                                 | Boolean `userVoted_`,<br>Candidate | To check if the current voter has casted their vote or not. If voted then returns the candidate object to whom he/she casted their vote to |
-| getVotingEndTime()      | -                                                                                 | End time in `epoch`                | To get the voting end time                                                                                                                 |
-| getCandidateList()      | voterAadharNumber                                                                 | Candidate[]                        | To get the list of candidates who belongs to the current voter constituency                                                                |
-| vote()                  | `nominationNumber` of candidate,<br>voterAadharNumber,<br>current Time in `epoch` | -                                  | To cast one's vote to a particular candidate who belong to their own constituency                                                          |
-| getResults()            | current time in `epoch`                                                           | Results[]                          | To get the voting results. Can be called by anyone but only after the voting lines are closed                                              |
+| didCurrentJuryInterview()       | juryAddress                                                                 | Boolean `juryInterviewed_`           | To check if the current jury member has submitted their marks for interview or not. If submitted then returns true |
+| didCurrentJuryDiscussion()  | juryAddress                                                                 | Boolean `juryDiscussion_`,<br>Candidate | To check if the current jury member has submitted their marks for group discussion or not. If submitted then returns true |
+| getStudentsList()      | juryAddress                                                                                 | Types.Student as `students`                | To get the list of student candidates                                                                                                                 |
+| interview()      | `juryAddress` of jury,<br>`marks` as Array,<br>current Time in `epoch`                                                                  | Candidate[]                        | To submit one's marks to the students in regards to the interview round                                                              |
+| discussion()                  | `juryAddress` of jury,<br>`marks` as Array,<br>current Time in `epoch` | -                                  | To submit one's marks to the students in regards to the discussion round                                                          |
+| getResults()            | current time in `epoch`                                                           | Results[]                          | To get the election results. Can be called by anyone but only after the voting lines are closed                                              |
 |                         |                                                                                   |                                    |                                                                                                                                            |
-| updateVotingStartTime() | start time in `epoch`,<br>current time in `epoch`                                 | -                                  | To update the voting start date & time (Can only be called prior to voting start)                                                          |
-| extendVotingTime()      | end time in `epoch`,<br>current time in `epoch`                                   | -                                  | To extend the voting timelines (Can only be done once voting process starts & before the voting ends)                                      |
+| getWinner() | current time in `epoch`                                 | Results                                  | To get the winner from the results. Can be called by anyone but only after the voting lines are closed                                                          |
+| getElectionEndTime()      | -                                   | `electionEndTime_`                                  | To get the ending timeline of the election                                     |
 
-### Versions
-
-Compiler: solc: 0.8.12+commit.f00d7308
-
-Truffle: v5.5.2
-
-Node: v14.17.0
 
 ### Quick Start
 
-1.  cd into project repro
+1.  Create a new workspace on Remix
 
-        cd E-Voting
-        cd blockchain
+        <a href="https://remix.ethereum.org/"> Remix IDE </a>
 
-2.  download node libraries
+2.  Upload the files
 
-        npm install
+        Election.sol
+        Types.sol
 
-3.  Download/Start ganache
+3.  Compile the files
 
-https://truffleframework.com/ganache
 
-4.  Compiling contracts
+4.  Deploy the contracts
 
-        truffle compile
+        Add the electionStartTime and electionEndTime parameters
+        e.g. 1649250142, 1662550200
 
-5.  Migrating to ganache
+5.  Start executing the required functions. Beginning from interview() and discussion()
 
-_Note depending on ganache cli/ui you my need to change truffle.js port settings Current listing on port : 7545_
+_Note the parameters for both functions mentioned above may be like \[marks...\], juryAddress,  currentTime_
 
-        truffle migrate --network development  --reset --all
 
-6.  Testing on ganache
+6.  After executing the functions for all jury members, call getResults() and getWinner() functions
 
-        truffle test
+        
 
-7.  Switch to FrontEnd & Testing
 
-_Note Change settings to your Contract address to point to local_
+### Test Jury
 
-          cd ..
-          cd front-end
-          npm install
-          npm start
+| User Name     | Aadhar Number | 
+| ------------- | ------------- | 
+| Suresh        |       11      |
+| Ramesh        |       12      |
+| Mahesh        |       13      |
+| Krishna       |       14      |
+| Narendra      |       15      |
 
-8.  Migrating to Rinkeby
 
-_Note Change truffle settings to your Contract Creator address within the "from" rinkeby configuration_
+### Test Students
 
-        truffle migrate --network rinkeby  --reset --all
+| Candidate Name     |      ID    | 
+| ------------------ | ---------- | 
+| Keval              | 1          | 
+| Atharv             | 2          | 
+| Moon               | 3          | 
 
-9.  Start FrontEnd on Rinkeby
 
-_Note Revert back all your local configurations & configure it to point to rinkeby_
+## Author 
 
-        npm start
+Neel Dandiwala
+<a href="https://www.linkedin.com/in/neel-dandiwala-9102921b7/" title="Code">LinkedIn💻</a>
 
-### Test Voters
-
-| User Name     | Aadhar Number | State          | Constituency | Age | isAlive |
-| ------------- | ------------- | -------------- | ------------ | --- | ------- |
-| Suresh        | 482253918244  | Andhra Pradesh | Guntur       | 21  | ✅      |
-| Ramesh        | 532122269467  | Andhra Pradesh | Guntur       | 37  | ❌      |
-| Mahesh        | 468065932286  | Andhra Pradesh | Guntur       | 26  | ✅      |
-| Krishna       | 809961147437  | Andhra Pradesh | Krishna      | 19  | ✅      |
-| Narendra      | 908623597782  | Andhra Pradesh | Krishna      | 36  | ✅      |
-| Raghu         | 760344621247  | Andhra Pradesh | Krishna      | 42  | ✅      |
-|               |               |                |              |     |         |
-| Pushkar Kumar | 908704156902  | Bihar          | Patna        | 25  | ✅      |
-| Kunal Kumar   | 778925466180  | Bihar          | Patna        | 37  | ✅      |
-| Aausi         | 756623869645  | Bihar          | Patna        | 85  | ❌      |
-| Ruchika       | 967746320661  | Bihar          | Patna        | 26  | ✅      |
-| Rambabu       | 727938171119  | Bihar          | Patna        | 17  | ✅      |
-| Matajii       | 609015917688  | Bihar          | Patna        | 98  | ✅      |
-| Kumar Sanket  | 393071790055  | Bihar          | Dehri        | 29  | ✅      |
-| Pratik        | 983881786161  | Bihar          | Dehri        | 40  | ✅      |
-| Pratiba       | 588109459505  | Bihar          | Dehri        | 68  | ❌      |
-| Mamata        | 620107691388  | Bihar          | Dehri        | 63  | ❌      |
-| Ravi Varma    | 403561319377  | Bihar          | Dehri        | 42  | ✅      |
-| Rahul         | 837970229674  | Bihar          | Dehri        | 56  | ✅      |
-
-### Politicians who participate in elections
-
-| Candidate Name     | Party Name | State          | Constituency |
-| ------------------ | ---------- | -------------- | ------------ |
-| Chandra Babu Naidu | TDP        | Andhra Pradesh | Guntur       |
-| Jagan Mohan Reddy  | YSRCP      | Andhra Pradesh | Guntur       |
-| G V Anjaneyulu     | TDP        | Andhra Pradesh | Krishna      |
-| Anil Kumar Yadav   | YSRCP      | Andhra Pradesh | Krishna      |
-|                    |            |                |              |
-| Narendra Modi      | BJP        | Bihar          | Patna        |
-| Rahul Gandhi       | INC        | Bihar          | Patna        |
-| Tejaswi Yadav      | RJD        | Bihar          | Patna        |
-| Arvind Kejriwal    | AAP        | Bihar          | Patna        |
-| Mamata Banarjee    | TMC        | Bihar          | Patna        |
-| Jyoti Basu         | CPIM       | Bihar          | Patna        |
-| Amit Shah          | BJP        | Bihar          | Dehri        |
-| Priyanka Gandhi    | INC        | Bihar          | Dehri        |
-| Lalu Yadav         | RJD        | Bihar          | Dehri        |
-| Manish Sisodia     | AAP        | Bihar          | Dehri        |
-| Prakash Karat      | CPIM       | Bihar          | Dehri        |
-
-## Team ✨
-
-Meet the amazing team who developed this project.
-
-<table>
-  <tr>
-    <td align="center"><a href="https://in.linkedin.com/in/sur950"><img src="https://avatars.githubusercontent.com/u/46712434?v=4" width="100px;" alt=""/><br /><sub><b>Suresh Konakanchi</b></sub></a><br /><a href="https://github.com/GeekyAnts/sample-e-voting-system-ethereum" title="Code">💻</a> <a href="https://geekyants.github.io/sample-e-voting-system-ethereum/" title="Documentation">📖</a> <a href="https://github.com/GeekyAnts/sample-e-voting-system-ethereum/issues" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://twitter.com/95pushkar"><img src="https://avatars.githubusercontent.com/u/41522922?v=4" width="100px;" alt=""/><br /><sub><b>Pushkar Kumar</b></sub></a><br /><a href="https://github.com/GeekyAnts/sample-e-voting-system-ethereum" title="Code">💻</a> <a href="https://geekyants.github.io/sample-e-voting-system-ethereum/" title="Documentation">📖</a> <a href="https://github.com/GeekyAnts/sample-e-voting-system-ethereum/issues" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://twitter.com/ruchikaSjv"><img src="https://avatars.githubusercontent.com/u/32259133?v=4" width="100px;" alt=""/><br /><sub><b>Ruchika Gupta</b></sub></a><br /><a href="https://github.com/GeekyAnts/sample-e-voting-system-ethereum" title="Code">💻</a> <a href="https://geekyants.github.io/sample-e-voting-system-ethereum/" title="Documentation">📖</a> <a href="https://github.com/GeekyAnts/sample-e-voting-system-ethereum/issues" title="Maintenance">🚧</a></td>
-  </tr>
-  </table>
 
 ## Sample Images
 
-<img src="https://github.com/GeekyAnts/sample-e-voting-system-ethereum/blob/main/sample-images/1.png?raw=true"><br>
-<img src="https://github.com/GeekyAnts/sample-e-voting-system-ethereum/blob/main/sample-images/2.png?raw=true"><br>
-<img src="https://github.com/GeekyAnts/sample-e-voting-system-ethereum/blob/main/sample-images/3.png?raw=true"><br>
-<img src="https://github.com/GeekyAnts/sample-e-voting-system-ethereum/blob/main/sample-images/4.png?raw=true"><br>
+<img src="https://github.com/Neel-Dandiwala/GS_Election/tree/master/sample-images/1.png?raw=true"><br>
+<img src="https://github.com/Neel-Dandiwala/GS_Election/tree/master/sample-images/2.png?raw=true"><br>
+<img src="https://github.com/Neel-Dandiwala/GS_Election/tree/master/sample-images/3.png?raw=true"><br>
+<img src="https://github.com/Neel-Dandiwala/GS_Election/tree/master/sample-images/4.png?raw=true"><br>
