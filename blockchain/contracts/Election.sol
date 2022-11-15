@@ -161,8 +161,6 @@ contract Election {
             }
         }
 
-
-
         return winnerDetails_;
     }
 
