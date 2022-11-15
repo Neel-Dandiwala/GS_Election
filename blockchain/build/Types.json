@@ -15,15 +15,15 @@
     "absolutePath": "project:/contracts/Types.sol",
     "exportedSymbols": {
       "Types": [
-        699
+        906
       ]
     },
-    "id": 700,
+    "id": 907,
     "license": "GPL-3.0",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 677,
+        "id": 884,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -32,7 +32,7 @@
         "src": "37:33:1"
       },
       {
-        "id": 678,
+        "id": 885,
         "literals": [
           "solidity",
           ">=",
@@ -52,15 +52,15 @@
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-          "id": 679,
+          "id": 886,
           "nodeType": "StructuredDocumentation",
           "src": "108:58:1",
           "text": "@title Types\n@author Neel Deep Dandiwala"
         },
         "fullyImplemented": true,
-        "id": 699,
+        "id": 906,
         "linearizedBaseContracts": [
-          699
+          906
         ],
         "name": "Types",
         "nameLocation": "178:5:1",
@@ -68,16 +68,16 @@
         "nodes": [
           {
             "canonicalName": "Types.Jury",
-            "id": 686,
+            "id": 893,
             "members": [
               {
                 "constant": false,
-                "id": 681,
+                "id": 888,
                 "mutability": "mutable",
                 "name": "juryAddress",
                 "nameLocation": "222:11:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 686,
+                "scope": 893,
                 "src": "214:19:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -86,7 +86,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 680,
+                  "id": 887,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "214:7:1",
@@ -99,12 +99,12 @@
               },
               {
                 "constant": false,
-                "id": 683,
+                "id": 890,
                 "mutability": "mutable",
                 "name": "juryTookInterview",
                 "nameLocation": "252:17:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 686,
+                "scope": 893,
                 "src": "244:25:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -113,7 +113,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 682,
+                  "id": 889,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "244:7:1",
@@ -126,12 +126,12 @@
               },
               {
                 "constant": false,
-                "id": 685,
+                "id": 892,
                 "mutability": "mutable",
                 "name": "juryTookDiscussion",
                 "nameLocation": "288:18:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 686,
+                "scope": 893,
                 "src": "280:26:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -140,7 +140,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 684,
+                  "id": 891,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "280:7:1",
@@ -155,22 +155,22 @@
             "name": "Jury",
             "nameLocation": "198:4:1",
             "nodeType": "StructDefinition",
-            "scope": 699,
+            "scope": 906,
             "src": "191:123:1",
             "visibility": "public"
           },
           {
             "canonicalName": "Types.Student",
-            "id": 691,
+            "id": 898,
             "members": [
               {
                 "constant": false,
-                "id": 688,
+                "id": 895,
                 "mutability": "mutable",
                 "name": "studentName",
                 "nameLocation": "355:11:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 691,
+                "scope": 898,
                 "src": "348:18:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -179,7 +179,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 687,
+                  "id": 894,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "348:6:1",
@@ -192,12 +192,12 @@
               },
               {
                 "constant": false,
-                "id": 690,
+                "id": 897,
                 "mutability": "mutable",
                 "name": "studentId",
                 "nameLocation": "385:9:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 691,
+                "scope": 898,
                 "src": "377:17:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -206,7 +206,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 689,
+                  "id": 896,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "377:7:1",
@@ -221,22 +221,22 @@
             "name": "Student",
             "nameLocation": "329:7:1",
             "nodeType": "StructDefinition",
-            "scope": 699,
+            "scope": 906,
             "src": "322:80:1",
             "visibility": "public"
           },
           {
             "canonicalName": "Types.Results",
-            "id": 698,
+            "id": 905,
             "members": [
               {
                 "constant": false,
-                "id": 693,
+                "id": 900,
                 "mutability": "mutable",
                 "name": "resultName",
                 "nameLocation": "443:10:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 698,
+                "scope": 905,
                 "src": "436:17:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -245,7 +245,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 692,
+                  "id": 899,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "436:6:1",
@@ -258,12 +258,12 @@
               },
               {
                 "constant": false,
-                "id": 695,
+                "id": 902,
                 "mutability": "mutable",
                 "name": "resultMarks",
                 "nameLocation": "472:11:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 698,
+                "scope": 905,
                 "src": "464:19:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -272,7 +272,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 694,
+                  "id": 901,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "464:7:1",
@@ -285,12 +285,12 @@
               },
               {
                 "constant": false,
-                "id": 697,
+                "id": 904,
                 "mutability": "mutable",
                 "name": "resultId",
                 "nameLocation": "502:8:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 698,
+                "scope": 905,
                 "src": "494:16:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -299,7 +299,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 696,
+                  "id": 903,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "494:7:1",
@@ -314,12 +314,12 @@
             "name": "Results",
             "nameLocation": "417:7:1",
             "nodeType": "StructDefinition",
-            "scope": 699,
+            "scope": 906,
             "src": "410:108:1",
             "visibility": "public"
           }
         ],
-        "scope": 700,
+        "scope": 907,
         "src": "170:351:1",
         "usedErrors": []
       }
@@ -332,7 +332,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-11-12T19:46:39.549Z",
+  "updatedAt": "2022-11-15T04:57:03.744Z",
   "devdoc": {
     "author": "Neel Deep Dandiwala",
     "kind": "dev",

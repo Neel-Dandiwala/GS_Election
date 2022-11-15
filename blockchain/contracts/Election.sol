@@ -14,6 +14,7 @@ contract Election {
     mapping(uint256 => Types.Jury) jury;
     mapping(uint256 => Types.Student) student;
     mapping(uint256 => uint256) internal resultObtainedMarks;
+    mapping(uint256 => uint256) internal likingVote;
 
     address electionMaster;
     uint256 private electionStartTime;
@@ -52,11 +53,23 @@ contract Election {
     {
         jury[juryAddress].juryTookInterview = 1;
 
+        uint256 highestMarks_ = 0;
+        uint256 highestMarksStudent_ = 0;
+        uint256 secondHighestMarks_ = 0;
+
         for (uint256 i = 0; i < students.length; i++){
             uint256 resultMarks_ = resultObtainedMarks[students[i].studentId];
             require(0 <= marks[i] && marks[i] <= 10);
             resultObtainedMarks[students[i].studentId] = resultMarks_ + marks[i];
+            if(marks[i] > highestMarks_) {
+                secondHighestMarks_ = highestMarks_;
+                highestMarks_ = marks[i];
+                highestMarksStudent_ = i;
+            }
         }
+
+        uint256 likingVote_ = likingVote[students[highestMarksStudent_].studentId];
+        likingVote[students[highestMarksStudent_].studentId] = likingVote_ + (highestMarks_ - secondHighestMarks_);
          
     }
 
@@ -69,11 +82,23 @@ contract Election {
     {
         jury[juryAddress].juryTookDiscussion = 1;
 
+        uint256 highestMarks_ = 0;
+        uint256 highestMarksStudent_ = 0;
+        uint256 secondHighestMarks_ = 0;
+
         for (uint256 i = 0; i < students.length; i++){
             uint256 resultMarks_ = resultObtainedMarks[students[i].studentId];
             require(0 <= marks[i] && marks[i] <= 10);
             resultObtainedMarks[students[i].studentId] = resultMarks_ + marks[i];
+            if(marks[i] > highestMarks_) {
+                secondHighestMarks_ = highestMarks_;
+                highestMarks_ = marks[i];
+                highestMarksStudent_ = i;
+            }
         }
+
+        uint256 likingVote_ = likingVote[students[highestMarksStudent_].studentId];
+        likingVote[students[highestMarksStudent_].studentId] = likingVote_ + (highestMarks_ - secondHighestMarks_);
          
     }
 
@@ -101,16 +126,42 @@ contract Election {
         require(electionEndTime < currentTime_);
         Types.Results memory winnerDetails_;
         uint256 highestMarks_ = 0;
+        uint256 highestMarksStudent_ = 0;
+
         for (uint256 i = 0; i < students.length; i++) {
             if (resultObtainedMarks[students[i].studentId] > highestMarks_) {
                 highestMarks_ = resultObtainedMarks[students[i].studentId];
-                winnerDetails_ = Types.Results({
-                    resultName: students[i].studentName,
-                    resultMarks: resultObtainedMarks[students[i].studentId],
-                    resultId: students[i].studentId
-                });
+                highestMarksStudent_ = i;
             }
         }
+
+        uint256 tieCounter_ = 0;
+        for(uint256 i = 0; i < students.length; i++) {
+            if (resultObtainedMarks[students[i].studentId] == highestMarks_) {
+                tieCounter_++;
+            }
+        }
+
+        if(tieCounter_ == 1){
+            winnerDetails_ = Types.Results({
+                    resultName: students[highestMarksStudent_].studentName,
+                    resultMarks: resultObtainedMarks[students[highestMarksStudent_].studentId],
+                    resultId: students[highestMarksStudent_].studentId
+            });
+        } else {
+            for(uint256 i = 0; i < students.length; i++) {
+                uint256 highestVote_ = 0;
+                if(likingVote[students[i].studentId] > highestVote_){
+                    winnerDetails_ = Types.Results({
+                        resultName: students[i].studentName,
+                        resultMarks: resultObtainedMarks[students[i].studentId],
+                        resultId: students[i].studentId
+                    });
+                }
+            }
+        }
+
+
 
         return winnerDetails_;
     }
